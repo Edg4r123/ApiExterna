@@ -17,3 +17,14 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::resources([
+    'users' => 'UserController',
+    'posts' => 'PostController',
+    'albums' => 'AlbumsController',
+]);
+
+Route::resource('users.posts', 'PostController')->shallow();
+Route::resource('posts.comments', 'CommentController')->shallow();
+Route::resource('users.albums', 'AlbumController')->shallow();
+Route::resource('albums.photos', 'PhotoController')->shallow();

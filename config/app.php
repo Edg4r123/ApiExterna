@@ -1,7 +1,10 @@
 <?php
 
 return [
-
+    /*
+     * Endpoint ws 
+    */
+    'ws' => 'https://jsonplaceholder.typicode.com',
     /*
     |--------------------------------------------------------------------------
     | Application Name
