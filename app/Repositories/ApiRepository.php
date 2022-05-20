@@ -11,8 +11,7 @@ class ApiRepository
     public static function processRequestApi(Request $request, $url = '', $id = null)
     {
         $response = Http::{$request->method()}($url);
-        if ($response->successful()
-            || $response->failed()
+        if ($response->failed()
             || $response->clientError()
             || $response->serverError()) {
                 Log::error("fallo");
