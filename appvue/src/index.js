@@ -21,27 +21,20 @@ Object.keys(rules).forEach(rule => {
     extend(rule, rules[rule]);
 });
 localize("es", es);
-import Users from './components/User.vue'
-import Post from './components/Post.vue'
+import Users from './components/Users.vue'
+import User from './components/User.vue'
+import UserPost from './components/UserPost.vue'
 export const router = new VueRouter({
     routes: [
         { path: '/', component: Users },
         { path: '/usuarios', component: Users },
         { 
             path: '/usuarios/:id', 
-            component: UserPost,
+            component: User,
             children: [
                 {
-                  // UserProfile will be rendered inside User's <router-view>
-                  // when /user/:id/profile is matched
-                  path: 'profile',
-                  component: UserProfile
-                },
-                {
-                  // UserPosts will be rendered inside User's <router-view>
-                  // when /user/:id/posts is matched
-                  path: 'posts',
-                  component: UserPosts
+                    path: 'publicaciones',
+                    component: UserPost
                 }
             ] 
         },
