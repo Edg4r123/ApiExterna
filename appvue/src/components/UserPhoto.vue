@@ -46,7 +46,6 @@ export default {
         async getAlbums() {
             try {
                 const response = await axios.get(`/users/${this.user_id}/albums`);
-                console.log(response)
                 if (response.status == 200 && response.data) {
                     this.albums = response.data.map((a) => {
                         a.photos = [];
@@ -65,13 +64,11 @@ export default {
                     const response = await axios.get(url);
                     if (response.status == 200 && response.data) {
                         this.albums[i].photos = response.data;
-                        console.log(this.albums[i].photos)
                     }
                 } catch (error) {
                     console.log(error)
                 }
             }
-            console.log(this.albums)
         }
     }
 }
