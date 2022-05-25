@@ -20,9 +20,7 @@
 						<b-button variant="outline-warning" @click.prevent="action(row.item, 2)" size="sm">
 							<b-icon icon="images"></b-icon>
 						</b-button>
-						<b-button variant="outline-danger" @click.prevent="action(row.item, 3)" size="sm">
-							<b-icon icon="code"></b-icon>
-						</b-button>
+                        <Logs :modal-id="'modal-user-' + row.item.id" style="display:inline"></Logs>
 					</template>
                 </b-table>
             </div>
@@ -33,7 +31,11 @@
 <script>
 const ACTION_POST = 1;
 const ACTION_PHOTO = 2;
+import Logs from './Logs.vue'
 export default {
+    components: {
+        Logs
+    },
     name: "Users",
     data() {
         return {

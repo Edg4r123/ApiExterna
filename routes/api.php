@@ -22,6 +22,7 @@ Route::resources([
     'users' => 'UserController',
     'posts' => 'PostController',
     'albums' => 'AlbumsController',
+    'logs' => 'LogController'
 ]);
 
 Route::resource('users.posts', 'PostController')->shallow();
