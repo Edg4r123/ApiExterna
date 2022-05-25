@@ -24,6 +24,7 @@ localize("es", es);
 import Users from './components/Users.vue'
 import User from './components/User.vue'
 import UserPost from './components/UserPost.vue'
+import UserPhoto from './components/UserPhoto.vue'
 export const router = new VueRouter({
     routes: [
         { path: '/', component: Users },
@@ -35,6 +36,10 @@ export const router = new VueRouter({
                 {
                     path: 'publicaciones',
                     component: UserPost
+                },
+                {
+                    path: 'fotos',
+                    component: UserPhoto
                 }
             ] 
         },

@@ -16,9 +16,9 @@ export default {
     name: "UserPost",
     data() {
         return {
-        user_id: 0,
-        user: {},
-        news: [],
+            user_id: 0,
+            user: {},
+            news: [],
         };
     },
     created() {
