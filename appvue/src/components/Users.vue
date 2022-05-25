@@ -31,6 +31,8 @@
 </template>
 
 <script>
+const ACTION_POST = 1;
+const ACTION_PHOTO = 2;
 export default {
     name: "Users",
     data() {
@@ -82,7 +84,12 @@ export default {
                 .catch(e => {console.log(e)})
         },
         action(item, action) {
-
+            if (action == ACTION_POST) {
+                this.$router.push(`/usuarios/${item.id}/publicaciones`)
+            }
+            if (action == ACTION_PHOTO) {
+                this.$router.push(`/usuarios/${item.id}/fotos`)
+            }
         }
     }
 }

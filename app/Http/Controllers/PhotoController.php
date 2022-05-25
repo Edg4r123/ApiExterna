@@ -3,17 +3,33 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Repositories\ApiRepository;
+use App\Http\Controllers\AlbumController;
 
 class PhotoController extends Controller
 {
+    const RESOURCE = "/photos";
+    protected $url;
+
+    /**
+     * Instantiate a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->url = config('app.ws');
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request, $album_id)
     {
-        //
+        $url = $this->url . AlbumController::RESOURCE . "/" . $album_id . self::RESOURCE;
+        return ApiRepository::processRequestApi($request, $url);
     }
 
     /**
