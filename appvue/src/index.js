@@ -1,5 +1,5 @@
 window.axios = require('axios');
-axios.defaults.baseURL = 'http://apiexterna.test/api/';
+axios.defaults.baseURL = 'http://localhost:8888/api/';
 import Vue from 'vue'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import VueRouter from 'vue-router'

@@ -5,10 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">Calendario</div>
 
                 <div class="card-body">
-                    <Calendar-User></Calendar-User>
+                    <Calendar-User :i-user='{!! $user !!}'></Calendar-User>
                 </div>
             </div>
         </div>

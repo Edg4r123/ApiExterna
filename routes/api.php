@@ -29,3 +29,4 @@ Route::resource('users.posts', 'PostController')->shallow();
 Route::resource('posts.comments', 'CommentController')->shallow();
 Route::resource('users.albums', 'AlbumController')->shallow();
 Route::resource('albums.photos', 'PhotoController')->shallow();
+Route::resource('events', 'EventController')->middleware('auth.basic');
